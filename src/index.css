@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-950 text-gray-200 antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-950;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-700 hover:bg-gray-600;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-pink-500 px-6 py-3 font-semibold text-white transition-all hover:bg-pink-600 hover:shadow-lg hover:shadow-pink-500/25 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-gray-700 bg-gray-800/50 px-6 py-3 font-semibold text-gray-200 transition-all hover:border-shelby-500 hover:bg-gray-800 hover:text-white active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .card {
+    @apply rounded-2xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition-all hover:border-gray-700;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-lg bg-gray-800;
+  }
+}
