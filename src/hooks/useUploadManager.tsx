@@ -8,7 +8,6 @@ import {
 } from "react";
 import {
   AccountAddress,
-  Network,
 } from "@aptos-labs/ts-sdk";
 import {
   createBlobKey,
@@ -18,7 +17,6 @@ import {
   ShelbyBlobClient,
 } from "@shelby-protocol/sdk/browser";
 import { shelbyClient } from "../lib/shelby";
-import { APTOS_NETWORK } from "../lib/constants";
 import { getShareLink } from "../lib/utils";
 import { toast } from "sonner";
 
@@ -66,12 +64,7 @@ export function useUploadManager() {
 /*  Direct REST polling for transaction confirmation                   */
 /* ------------------------------------------------------------------ */
 
-const FULLNODE_URL =
-  APTOS_NETWORK === Network.MAINNET
-    ? "https://api.mainnet.aptoslabs.com/v1"
-    : APTOS_NETWORK === Network.DEVNET
-      ? "https://api.devnet.aptoslabs.com/v1"
-      : "https://api.testnet.aptoslabs.com/v1";
+const FULLNODE_URL = "https://api.testnet.aptoslabs.com/v1";
 
 /**
  * Poll the fullnode REST API directly for a transaction hash.
